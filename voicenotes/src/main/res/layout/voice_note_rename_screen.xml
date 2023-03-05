@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_bottom_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:paddingVertical="@dimen/margin_top_content"
+        android:text="@string/voice_note_rename"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/file_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/title"
+        android:layout_marginHorizontal="@dimen/margin_bottom_content"
+        android:layout_marginBottom="@dimen/margin_bottom_content"
+        android:background="@drawable/shape_transparent_blue"
+        android:gravity="center_vertical"
+        android:inputType="textAutoComplete"
+        android:paddingHorizontal="@dimen/content_margin_horizontal"
+        android:paddingVertical="8dp"
+        android:paddingBottom="@dimen/margin_bottom_content" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file_name"
+        android:layout_marginHorizontal="@dimen/content_margin_horizontal"
+        android:background="@drawable/shape_blue_pressed"
+        android:elevation="0dp"
+        android:text="@string/cancel"
+        android:translationZ="0dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_ok"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="@dimen/content_margin_horizontal"
+        android:background="@drawable/shape_blue_pressed"
+        android:elevation="0dp"
+        android:text="@string/ok"
+        android:translationZ="0dp" />
+
+
+</RelativeLayout>

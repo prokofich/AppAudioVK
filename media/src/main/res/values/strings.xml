@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Notification Channel -->
+    <string name="player_notification_channel_title">Now Playing</string>
+    <string name="player_notification_channel_description">Shows what audio is currently playing</string>
+</resources>

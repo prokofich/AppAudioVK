@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/item_background"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/VoiceNoteItem_horizontal_padding"
+        android:paddingVertical="@dimen/VoiceNoteItem_vertical_padding">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/NoteTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            tools:text="Крутой трек" />
+
+        <TextView
+            android:id="@+id/create_time"
+            style="@style/NoteSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:paddingBottom="@dimen/VoiceNoteItem_vertical_padding"
+            tools:text="12.02.2022 в 13:11" />
+
+        <TextView
+            android:id="@+id/current_time"
+            style="@style/NoteTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/time_delimiter"
+            android:paddingStart="@dimen/VoiceNoteItem_time_horizontal_padding"
+            android:textColor="@color/item_current_time_color"
+            android:visibility="invisible"
+            tools:text="2:18"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/time_delimiter"
+            style="@style/NoteTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="4dp"
+            android:layout_toStartOf="@id/total_time"
+            android:text="@string/time_delimiter"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/total_time"
+            style="@style/NoteTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/btn_play"
+            android:paddingEnd="@dimen/VoiceNoteItem_time_horizontal_padding"
+            android:textColor="@color/item_total_time_color"
+            tools:text="5:32" />
+
+        <ToggleButton
+            android:id="@+id/btn_play"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/play_btn_ratio"
+            android:textOff=""
+            android:textOn="" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/player_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="bottom"
+        android:minWidth="2000dp"
+        android:progressDrawable="@drawable/playback_progress"
+        tools:progress="40"
+        tools:visibility="visible" />
+
+</androidx.cardview.widget.CardView>

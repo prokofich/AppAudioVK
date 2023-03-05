@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="VoiceNoteItem_horizontal_space">16dp</dimen>
+    <dimen name="VoiceNoteItem_vertical_space">4dp</dimen>
+    <dimen name="VoiceNoteItem_horizontal_padding">16dp</dimen>
+    <dimen name="VoiceNoteItem_vertical_padding">8dp</dimen>
+    <dimen name="VoiceNoteItem_time_horizontal_padding">16dp</dimen>
+    <dimen name="record_button_size">64dp</dimen>
+    <dimen name="record_button_margin">32dp</dimen>
+
+    <dimen name="margin_bottom_content">24dp</dimen>
+    <dimen name="margin_top_content">24dp</dimen>
+    <dimen name="content_margin_horizontal">24dp</dimen>
+    <dimen name="large_button_corner_radius">16dp</dimen>
+
+</resources>

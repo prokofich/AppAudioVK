@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/voice_note_list_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="10"
+        android:overScrollMode="always"
+        tools:listitem="@layout/voice_note_item"
+        android:paddingBottom="100dp"/>
+
+    <ToggleButton
+        android:id="@+id/btn_add_voice_note"
+        android:layout_width="@dimen/record_button_size"
+        android:layout_height="@dimen/record_button_size"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginVertical="@dimen/record_button_margin"
+        android:background="@drawable/round_button_64dp"
+        android:foreground="@drawable/record_audio_ratio"
+        android:elevation="10dp"
+        android:stateListAnimator="@null"
+        android:textOn=""
+        android:textOff=""
+        android:clickable="false"
+        android:filterTouchesWhenObscured="true"
+        android:foregroundGravity="center"/>
+
+    <View
+        android:id="@+id/add_voice_note_overlay"
+        android:layout_width="@dimen/record_button_size"
+        android:layout_height="@dimen/record_button_size"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginVertical="@dimen/record_button_margin"/>
+
+</FrameLayout>

@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.stacktivity.vkvoicenotes'
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.stacktivity.vkvoicenotes"
+        minSdk 23
+        targetSdk 31
+        versionCode 5
+        versionName "0.4.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName =
+                    "${variant.name}-${variant.versionName}-${new Date().toTimestamp().time}.apk"
+        }
+        variant.assembleProvider.configure { assemble ->
+            assemble.doLast {
+                copy {
+                    def outDir = new File(currentProject.projectDir.absolutePath, "apks")
+                    println("outDir ${outDir.absolutePath}")
+                    outDir.mkdirs()
+                    from variant.outputs*.outputFile
+                    into outDir
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    // It is necessary to support minSdkVersion below 26
+    // and work with the Pretty Time library included in [voicenotes] module.
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    implementation project(':core')
+    implementation project(':voicenotes')
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+
+    // Design
+    implementation 'com.google.android.material:material:1.5.0'
+
+    // ViewBinding delegate
+    api "com.github.kirich1409:viewbindingpropertydelegate-noreflection:$vb_delegate_version"
+
+    // Vk SDK
+    implementation "com.vk:android-sdk-core:$vkSdkVersion"
+}

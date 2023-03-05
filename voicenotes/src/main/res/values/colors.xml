@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue">#2688EB</color>
+    <color name="blue_dark">#267ADC</color>
+    <color name="gray_dark">#6D7885</color>
+    <color name="blue_alpha_20">#333F8AE0</color>
+
+    <color name="item_background">#F5F5F5</color>
+    <color name="item_subtitle_color">#888888</color>
+    <color name="item_current_time_color">#6C6C6C</color>
+    <color name="item_total_time_color">#888888</color>
+
+</resources>
